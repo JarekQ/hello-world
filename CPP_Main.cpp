@@ -9,9 +9,13 @@ Purpose: To serve as a portfolio program
 to demonstrate aptitude of coding in C++.
 -------------*/
 
-#include <iostream>
+// This include statement can be used after importing the C++ Package from here: https://vcpkg.io/en/getting-started.html
+//#include <iostream>
 
 int main()
 {
-    std::cout << "Hello World\n";
+    // uses the iostream
+    //std::cout << "Hello World\n";
+
+    //printf("Hello World");
 }
