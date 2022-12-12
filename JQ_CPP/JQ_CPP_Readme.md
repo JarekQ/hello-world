@@ -1,4 +1,4 @@
-# JQ C-Sharp Code
+# JQ C++ Code
 
 This folder organizes all C++ code created for presentation.
 
