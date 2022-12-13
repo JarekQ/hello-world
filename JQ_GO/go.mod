@@ -1,3 +1,3 @@
-module JQ_GO_Main
+module JQ_GO
 
 go 1.19
