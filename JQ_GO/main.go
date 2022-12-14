@@ -8,14 +8,95 @@ Modified By: JarekQ Aloisio
 */
 package main
 
-import "fmt"
+import (
+	"JQ_GO/models"
+	"fmt"
+)
 
 func main() {
-	helloWorld()
-	introPDT()
-	introPointers()
-	introConstants()
-	introConstExpress_Iota()
+	/*
+		helloWorld()
+		introPDT()
+		introPointers()
+		introConstants()
+		introConstExpress_Iota()
+	*/
+
+	u := models.User{
+		ID:        2,
+		FirstName: "Tricia",
+		LastName:  "McMillan",
+	}
+	fmt.Println(u)
+}
+
+func introStructs() {
+	type user struct {
+		ID        int
+		FirstName string
+		LastName  string
+	}
+
+	var u user
+	u.ID = 1
+	u.FirstName = "Arthur"
+	u.LastName = "Dent"
+	fmt.Println(u)
+	fmt.Println(u.FirstName)
+
+	u2 := user{
+		ID:        1,
+		FirstName: "John",
+		LastName:  "Connor",
+	}
+
+	fmt.Println(u2)
+}
+
+func introMaps() {
+	m := map[string]int{"foo": 42}
+	fmt.Println(m)
+	fmt.Println(m["foo"])
+
+	m["foo"] = 27
+	fmt.Println(m)
+
+	delete(m, "foo")
+	fmt.Println(m)
+}
+
+func introSlices() {
+	arr3 := [3]int{1, 2, 3}
+	slice := arr3[:]
+	fmt.Println(arr3, slice)
+
+	arr3[1] = 42
+	slice[2] = 27
+
+	fmt.Println(arr3, slice)
+
+	slice2 := []int{1, 2, 3}
+	fmt.Println(slice2)
+
+	slice2 = append(slice2, 4, 42, 27)
+	fmt.Println(slice2)
+
+	s2 := slice2[1:]
+	s3 := slice2[:2]
+	s4 := slice2[1:2]
+	fmt.Println(s2, s3, s4)
+}
+
+func introArrays() {
+	var arr [3]int
+	arr[0] = 1
+	arr[1] = 2
+	arr[2] = 3
+	fmt.Println(arr)
+
+	arr2 := [3]int{1, 2, 3}
+	fmt.Println(arr2)
+	//fmt.Println(arr[4]) // error thrown out of bounds
 }
 
 // First Constant Block
