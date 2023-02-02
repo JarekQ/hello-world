@@ -9,8 +9,11 @@ Modified By: JarekQ Aloisio
 package main
 
 import (
+	"JQ_GO/controllers"
 	"JQ_GO/models"
+	"errors"
 	"fmt"
+	"net/http"
 )
 
 func main() {
@@ -20,8 +23,58 @@ func main() {
 		introPointers()
 		introConstants()
 		introConstExpress_Iota()
+		modelUser()
+		startWebServer_v1(3000,2)
+
+		isStarted := startWebServer_v2(3000, 2)
+		fmt.Println(isStarted)
+
+		err := startWebServer_v3(3000, 2)
+		fmt.Println(err)
+
+		port, err := startWebServer_v4(3000, 2)
+		fmt.Println(port, err)
 	*/
 
+	controllers.RegisterControllers()
+	http.ListenAndServe(":3000", nil)
+
+}
+
+func startWebServer_v4(port int, numberOfRetries int) (int, error) {
+	fmt.Println("Starting Server...")
+	// do something
+	fmt.Println("Server Started on port:", port)
+	fmt.Println("Number of retries:", numberOfRetries)
+	//return nil
+	return port, nil
+}
+
+func startWebServer_v3(port int, numberOfRetries int) error {
+	fmt.Println("Starting Server...")
+	// do something
+	fmt.Println("Server Started on port:", port)
+	fmt.Println("Number of retries:", numberOfRetries)
+	//return nil
+	return errors.New("something went wrong")
+}
+
+func startWebServer_v2(port int, numberOfRetries int) bool {
+	fmt.Println("Starting Server...")
+	// do something
+	fmt.Println("Server Started on port:", port)
+	fmt.Println("Number of retries:", numberOfRetries)
+	return true
+}
+
+func startWebServer_v1(port int, numberOfRetries int) {
+	fmt.Println("Starting Server...")
+	// do something
+	fmt.Println("Server Started on port:", port)
+	fmt.Println("Number of retries:", numberOfRetries)
+}
+
+func modelUser() {
 	u := models.User{
 		ID:        2,
 		FirstName: "Tricia",
